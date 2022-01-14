@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.util.List;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.interactions.Actions;
@@ -43,7 +44,7 @@ public class TelaInicialPage {
 	@AndroidFindBy(id = "com.google.android.keep:id/settings_add_new_items_to_bottom")
 	private MobileElement botaoSwitch;
 	
-	@AndroidFindBy(id = "com.google.android.keep:id/browse_note_interior_content")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'NotaEditada']")
 	private MobileElement notaCriada;
 	
 	@AndroidFindBy(accessibility = "More options")
@@ -111,6 +112,12 @@ public class TelaInicialPage {
 	
 	public void scrollTeste() throws InterruptedException {
 		notaScroll.click();
+		Thread.sleep(2000);
+	}
+	
+	public void arrastarNotaDireita() throws InterruptedException {
+		Thread.sleep(3000);
+		swipeDireita();
 		Thread.sleep(2000);
 	}
 	

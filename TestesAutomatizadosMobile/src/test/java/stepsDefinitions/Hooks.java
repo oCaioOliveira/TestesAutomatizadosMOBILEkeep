@@ -1,5 +1,6 @@
 package stepsDefinitions;
 
+import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
@@ -13,7 +14,8 @@ public class Hooks {
 	}
 
 	@After()
-	public void fecharCalculadora() throws Exception {
+	public void fecharCalculadora(Scenario scenario) throws Exception {
+		capturarTela(scenario);
 		driver.quit();
 	}
 

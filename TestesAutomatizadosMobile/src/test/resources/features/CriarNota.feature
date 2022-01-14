@@ -23,7 +23,7 @@ Funcionalidade: Google Keep
     E eu informar no campo Title "NotaEditada"
     E eu informar no campo Note "NotaEditadaNota"
     E eu acionar o botao voltar
-    Entao o aplicativo cadastra a nota com o titulo "NotaEditada"
+    Entao o aplicativo edita a nota com o titulo "NotaEditada"
 
   Cenario: excluir nota
     Quando eu tocar e segurar a nota
@@ -31,6 +31,10 @@ Funcionalidade: Google Keep
     E eu tocar em deletar
     Entao o sistema adiciona a nota na lixeira
 
-  @cenario
   Cenario: clicar na scroll teste
     Quando eu clicar na scroll teste
+
+  @cenario
+  Cenario: Arrastar para a direita
+    Quando eu arrastar a nota pra direita
+    Entao o sistema arquiva a nota

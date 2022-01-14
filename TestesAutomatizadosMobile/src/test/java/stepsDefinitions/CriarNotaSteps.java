@@ -43,7 +43,7 @@ public class CriarNotaSteps {
 
 	@Entao("o aplicativo cadastra a nota com o titulo {string}")
 	public void oAplicativoCadastraANotaComOTitulo(String string) {
-		assertEquals(string, driver.findElement(By.id("com.google.android.keep:id/index_note_title")).getText());
+		assertEquals(string, driver.findElement(By.xpath("//android.widget.TextView[@text = 'Nota1']")).getText());
 	}
 
 	@Quando("eu acionar o menu")
@@ -96,6 +96,21 @@ public class CriarNotaSteps {
 	public void euClicarNaScrollTeste() throws Throwable {
 		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Scroll\").instance(0))"));
 		telaInicial.scrollTeste();
+	}
+
+	@Quando("^eu arrastar a nota pra direita$")
+	public void euArrastarANotaPraDireita() throws Throwable {
+		telaInicial.arrastarNotaDireita();
+	}
+
+	@Entao("^o sistema arquiva a nota$")
+	public void oSistemaArquivaANota() throws Throwable {
+		assertEquals("Note archived", driver.findElement(By.xpath("//android.widget.TextView[@text = 'Note archived']")).getText());
+	}
+
+	@Entao("^o aplicativo edita a nota com o titulo \"([^\"]*)\"$")
+	public void oAplicativoEditaANotaComOTitulo(String string) throws Throwable {
+		assertEquals(string, driver.findElement(By.xpath("//android.widget.TextView[@text = 'NotaEditada']")).getText());
 	}
 	
 
