@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(
 		plugin = {"pretty"},
 		features = "src\\test\\resources\\features",
-//		tags = "@cenario1",
+		tags = "@cenario",
 		glue = "stepsDefinitions",
 		snippets = SnippetType.CAMELCASE,
 		monochrome = true,

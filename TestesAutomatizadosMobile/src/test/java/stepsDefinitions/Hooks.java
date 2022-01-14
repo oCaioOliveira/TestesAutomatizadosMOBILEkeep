@@ -9,7 +9,7 @@ public class Hooks {
 
 	@Before()
 	public void setUp() throws Exception {
-		acessarCalculadora();
+		acessarKeep();
 	}
 
 	@After()
